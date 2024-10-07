@@ -176,7 +176,7 @@ form?.addEventListener("submit", (e) => {
     e.preventDefault();
     let itemName = document.querySelector("#item-name");
     let itemQuantity = document.querySelector("#item-quantity");
-    inventory.push({ "name": itemName.value, "quantity": itemQuantity.value });
+    inventory.push({ "name": itemName.value.toUpperCase(), "quantity": itemQuantity.value });
     setItem();
     itemName.value = "";
     itemQuantity.value = "";
@@ -215,6 +215,7 @@ function showData() {
         });
         // Edit Function
         editBtn.addEventListener("click", () => {
+            console.log("Edit Click");
             editIcon(singleItem, row, index);
         });
     });
